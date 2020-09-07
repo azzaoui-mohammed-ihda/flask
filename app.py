@@ -7,11 +7,11 @@ def home():
 
 @app.route("/about")
 def about():
-    return '''<h3> about </h3> '''
+    return render_template("about.html")
 
 @app.route("/contain")
 def contain():
-    return '''<h3> contain </h3> '''
+    return render_template("contain.html")
 
 if __name__=="__main__":
     app.run(debug=True)
