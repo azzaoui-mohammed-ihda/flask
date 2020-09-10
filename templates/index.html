@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        Home
+<div class="contain">
+{% for e in burgers %}
+    <div class="burger1"> 
+        Nom du Burger ==> {{ e.nom }} <br>
+        Prix          ==> {{ e.prix }} <br>
+        <img src="/static/image/{{ e.image }}" alt=""><br>
     </div>
+{% endfor %}
+</div>
 {% endblock content %}

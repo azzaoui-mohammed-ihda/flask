@@ -2,10 +2,9 @@ body{
     margin: 0px;
 }
 .img{
-    background-image: url("/static/image/d.png");
-    height: 150px;
-    background-size: 100%;
-    position: static;
+    background-image: url("/static/image/restaurant.jpeg");
+    height: 180px;
+    background-size: 150vh;
     
     
 }
@@ -26,7 +25,7 @@ li a{
 }
 footer{
     background-color: rgb(228, 212, 168);
-    position: fixed;
+    position: relative;
     bottom: 0px;
     width: 100%;
     height: 70px;
@@ -34,5 +33,13 @@ footer{
     color: rgb(116, 100, 70);
 }
 li a:hover{
-    background-color: rgb(145, 135, 80);
+    background-color: rgb(177, 177, 126)
+}
+.contain{
+    display: flex;
+    justify-content: center;
+}
+.burger1{
+    border: solid rgb(172, 156, 114);
+    margin: 10px;
 }
