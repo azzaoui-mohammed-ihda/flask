@@ -1,8 +1,7 @@
-from flask import Flask ,render_template
+from flask import Flask ,render_template, request
 import datetime
 
 app=Flask(__name__)
-
 burger=[
     {
         "nom":"cheese burger",
@@ -23,9 +22,29 @@ burger=[
         "nom":"hamburger",
         "prix":"25DH",
         "image":"4.jpeg"
+    },
+    {
+        "nom":"cheese burger",
+        "prix":"200 DH",
+        "image":"1.jpeg"
+    },
+    {
+        "nom":"cheese burger",
+        "prix":"200 DH",
+        "image":"2.jpeg"
+    },
+    {
+        "nom":"cheese burger",
+        "prix":"200 DH",
+        "image":"3.jpeg"
+    },
+    {
+        "nom":"cheese burger",
+        "prix":"200 DH",
+        "image":"2.jpeg"
     }
 ]
-
+Message=[]
 @app.route("/home")
 @app.route("/")
 def home():
@@ -36,9 +55,16 @@ def home():
 def about():
     return render_template("about.html",title="About")
 
-@app.route("/contain")
-def contain():
-    return render_template("contain.html",title="Contain")
+@app.route("/contact", methods=["GET","POST"])
+def contact():
+    if request.method=="POST":  
+        nom=request.form.get("nom")
+        email=request.form.get("email")
+        mssg=request.form.get("message")
+        messag={"nom":nom,"email":email,"message":mssg}
+        Message.append(messag)
+        print(Message)
+    return render_template("contact.html",title="Contact")
 
 if __name__=="__main__":
     app.run(debug=True)
