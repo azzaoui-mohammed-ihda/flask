@@ -1,4 +1,4 @@
-from flask import Flask ,render_template, request
+from flask import Flask ,render_template ,request
 import datetime
 
 app=Flask(__name__)
@@ -57,6 +57,7 @@ def about():
 
 @app.route("/contact", methods=["GET","POST"])
 def contact():
+    valide=False
     if request.method=="POST":  
         nom=request.form.get("nom")
         email=request.form.get("email")
@@ -64,7 +65,8 @@ def contact():
         messag={"nom":nom,"email":email,"message":mssg}
         Message.append(messag)
         print(Message)
-    return render_template("contact.html",title="Contact")
+        valide=True
+    return render_template("contact.html",title="Contact",valid=valide)
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=1949)

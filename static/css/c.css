@@ -51,3 +51,9 @@ form{
     padding: 30px;
     border-radius: 10px;
 }
+.message{
+    margin: 10px 10px 10px 540px;
+}
+#message{
+    text-align: center;
+}
